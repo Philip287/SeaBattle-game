@@ -2,10 +2,7 @@ package com.suprun.seaBattleGame.service.command;
 
 import com.suprun.seaBattleGame.exception.ServiceException;
 import com.suprun.seaBattleGame.service.Operation;
-import com.suprun.seaBattleGame.service.command.impl.ExitCommand;
-import com.suprun.seaBattleGame.service.command.impl.InfoCommand;
-import com.suprun.seaBattleGame.service.command.impl.SingInCommand;
-import com.suprun.seaBattleGame.service.command.impl.RegisterCommand;
+import com.suprun.seaBattleGame.service.command.impl.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +20,7 @@ public class CommandExecutor {
         commandMap.put(Operation.INFO, new InfoCommand());
         commandMap.put(Operation.EXIT, new ExitCommand());
         commandMap.put(Operation.REGISTER, new RegisterCommand());
-        commandMap.put(Operation.PLAY, new RegisterCommand());
+        commandMap.put(Operation.PLAY, new PlayCommand());
 
     }
 

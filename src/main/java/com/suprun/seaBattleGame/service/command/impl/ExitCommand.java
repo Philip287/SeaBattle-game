@@ -3,6 +3,7 @@ package com.suprun.seaBattleGame.service.command.impl;
 import com.suprun.seaBattleGame.App;
 import com.suprun.seaBattleGame.exception.ServiceException;
 import com.suprun.seaBattleGame.service.ContentGame;
+import com.suprun.seaBattleGame.service.GameService;
 import com.suprun.seaBattleGame.service.MessageHelper;
 import com.suprun.seaBattleGame.service.command.Command;
 import org.apache.logging.log4j.LogManager;
@@ -29,9 +30,9 @@ public class ExitCommand implements Command {
             String answer = MessageHelper.readString();
             if (answer.equals(ContentGame.CHOICE_1)) {
                 work = false;
-                App.exit = true;
+                GameService.exit = true;
             } else if (answer.equals(ContentGame.CHOICE_2)) {
-                App.exit = false;
+                GameService.exit = false;
                 work = false;
             } else {
                 MessageHelper.writeMessage(ContentGame.WRONG_MESSAGE);

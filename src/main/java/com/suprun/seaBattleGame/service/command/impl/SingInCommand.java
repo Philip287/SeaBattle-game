@@ -1,11 +1,11 @@
 package com.suprun.seaBattleGame.service.command.impl;
 
-import com.suprun.seaBattleGame.App;
-import com.suprun.seaBattleGame.entity.Player;
+import com.suprun.seaBattleGame.entity.User;
 import com.suprun.seaBattleGame.exception.ServiceException;
 import com.suprun.seaBattleGame.reader.DataReader;
 import com.suprun.seaBattleGame.reader.impl.DataReaderImpl;
 import com.suprun.seaBattleGame.service.ContentGame;
+import com.suprun.seaBattleGame.service.GameService;
 import com.suprun.seaBattleGame.service.MessageHelper;
 import com.suprun.seaBattleGame.service.SaveResult;
 import com.suprun.seaBattleGame.service.command.Command;
@@ -40,20 +40,20 @@ public class SingInCommand implements Command {
 
     @Override
     public void execute() throws ServiceException {
-        Player tempPlayer = playerVerification();
+        User tempPlayer = playerVerification();
         if (passwordCheck(tempPlayer) && tempPlayer != null) {
-            App.player = tempPlayer;
+            GameService.player = tempPlayer;
         }
 
     }
 
-    private Player playerVerification() throws ServiceException {
+    private User playerVerification() throws ServiceException {
         boolean flag = false;
-        Player tempPlayer = null;
+        User tempPlayer = null;
         while (!flag) {
             MessageHelper.writeMessage(ContentGame.PLAYER_NAME_MESSAGE);
             String namePlayer = MessageHelper.readString().trim();
-            Map<String, Player> playersList = reader.readFile().getPlayersList();
+            Map<String, User> playersList = reader.readFile().getPlayersList();
             if (namePlayer != null) {
                 tempPlayer = playersList.get(namePlayer);
                 if (tempPlayer != null) {
@@ -71,14 +71,14 @@ public class SingInCommand implements Command {
     }
 
 
-    public boolean passwordCheck(Player tempPlayer) throws ServiceException {
+    public boolean passwordCheck(User tempPlayer) throws ServiceException {
         int count = 0;
         boolean flag = false;
         while (count <= 2 && !flag) {
             if (blockingCheck(tempPlayer)) {
                 break;
             }
-            MessageHelper.writeMessage(ContentGame.PASSWORD_CODE_MESSAGE);
+            MessageHelper.writeMessage(ContentGame.PASSWORD_ASK_CODE_MESSAGE);
             String password = MessageHelper.readString().trim();
             if (passwordValidator.validate(password)) {
                 if (tempPlayer.isActive()) {
@@ -89,7 +89,7 @@ public class SingInCommand implements Command {
                         MessageHelper.writeMessage(ContentGame.WRONG_PASSWORD_MESSAGE + (4 - count));
                     }
                 } else {
-                    App.exit = true;
+                    GameService.exit = true;
                     break;
                 }
             } else {
@@ -101,19 +101,19 @@ public class SingInCommand implements Command {
         return flag;
     }
 
-    private void playerBlock(Player tempPlayer, int count) throws ServiceException {
+    private void playerBlock(User tempPlayer, int count) throws ServiceException {
         if (count == 3) {
             Calendar calendar = new GregorianCalendar();
             Long date = calendar.getTimeInMillis();
             tempPlayer.setBlockTime(date);
             tempPlayer.setActive(false);
             saveResult.saveResultOperation(tempPlayer);
-            App.player = null;
+            GameService.player = null;
             MessageHelper.writeMessage(ContentGame.BLOCK_PLAYER_MESSAGE);
         }
     }
 
-    private boolean blockingCheck(Player tempPlayer) throws ServiceException {
+    private boolean blockingCheck(User tempPlayer) throws ServiceException {
         if (!tempPlayer.isActive()) {
             return playerUnblock(tempPlayer);
         } else {
@@ -121,7 +121,7 @@ public class SingInCommand implements Command {
         }
     }
 
-    private boolean playerUnblock(Player tempPlayer) throws ServiceException {
+    private boolean playerUnblock(User tempPlayer) throws ServiceException {
         Calendar calendar = new GregorianCalendar();
         Long now = calendar.getTimeInMillis();
         if (now >= (tempPlayer.getBlockTime() + DAY_IN_MILLISECONDS)) {
@@ -134,7 +134,7 @@ public class SingInCommand implements Command {
             Long remainingTimeToUnlocking = (tempPlayer.getBlockTime() + DAY_IN_MILLISECONDS) - now;
             MessageHelper.writeMessage(ContentGame.INFO_BLOCK_PLAYER_MESSAGE +
                     TimeUnit.MILLISECONDS.toMinutes(remainingTimeToUnlocking) / 60 + ContentGame.HOURS_MESSAGE);
-            App.player = null;
+            GameService.player = null;
             return true;
         }
     }

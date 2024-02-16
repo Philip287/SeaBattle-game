@@ -1,11 +1,17 @@
 package com.suprun.seaBattleGame.service.command.impl;
 
-import com.suprun.seaBattleGame.App;
+import com.suprun.seaBattleGame.entity.Player;
+import com.suprun.seaBattleGame.entity.RandomIntelligence;
+import com.suprun.seaBattleGame.entity.SeaMap;
 import com.suprun.seaBattleGame.exception.ServiceException;
+import com.suprun.seaBattleGame.service.Game;
+import com.suprun.seaBattleGame.service.GameService;
 import com.suprun.seaBattleGame.service.command.Command;
 
+import java.io.IOException;
+
 public class PlayCommand implements Command {
-    private SingInCommand singInCommand;
+    private Command singInCommand;
 
     public PlayCommand() {
         singInCommand = new SingInCommand();
@@ -13,8 +19,24 @@ public class PlayCommand implements Command {
 
     @Override
     public void execute() throws ServiceException {
-        if (App.player == null) {
+        if (GameService.player == null) {
             singInCommand.execute();
+        }else {
+            SeaMap mapOne = new SeaMap();
+            SeaMap mapTwo = new SeaMap();
+
+            Player playerOne = new Player("Capitan", mapOne, mapTwo);
+            RandomIntelligence playerTwo = new RandomIntelligence(mapTwo, mapOne);
+
+            Game gameSession = new Game(playerOne, playerTwo);
+            try {
+                gameSession.startGame();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("play");
         }
     }
 }

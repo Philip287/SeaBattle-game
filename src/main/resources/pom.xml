@@ -1,61 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<Configuration status="info">
+    <Properties>
+        <property name="LOG_DIR">logs</property>
+        <property name="ARCHIVE_LOG_DIR">${LOG_DIR}/archive/</property>
+        <property name="pattern_file">%d{yyyy-MM--dd HH:mm:ss} [%t] %-5level %logger{5} -%msg%n</property>
+        <property name="pattern_console">%relative [%t] %-5level %logger{5} - %msg%n</property>
+    </Properties>
+    <ThresholdFilter level="trace"/>
+    <Appenders>
+        <Console name="Console"
+                 target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern_console}"/>
+            <Filtres>
+                <MarkerFilter marker="Flow" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <MarkerFilter marker="Exception" onMatch="DENY" onMismatch="ACCEPT"/>
+            </Filtres>
+        </Console>
 
-    <groupId>com.suprun</groupId>
-    <artifactId>SeaBattle-game</artifactId>
-    <version>1.0-SNAPSHOT</version>
+        <File name="File1" filiName="${LOG_DIR}/text.log" bufferdIO="true">
+            <PatternLayout pattern="${pattern_file}"/>
+        </File>
 
-    <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-    </properties>
+        <RollingFile name="FileZip"
+                     fileName="${LOG_DIR}/text_arc.log" append="true"
+                     filePattern="${ARCHIVE_LOG_DIR}/${date:yyyy-MM-dd}/%d{yyyy-MM-dd_HH-mm}_%i.log.zip">
+            <PatternLayout pattern="${pattern_file}"/>
+            <BurstFilter level="INFO" rate="16" maxBurst="100"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="15 KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.14.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.14.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.14.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>2.14.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.10</version>
-        </dependency>
-    </dependencies>
+        <RollingFile name="FileRolling"
+                     fileName="logs/text_roll.log" append="true"
+                     filePattern="logs/${date:yyyy-MM-dd}/%d{yyyy-MM-dd_HH-mm}_%i.log">
+            <PatternLayout pattern="${pattern_file}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="25 KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
 
 
-    <build>
-
-        <finalName>atm-demo</finalName>
-
-        <plugins>
-            <!-- Builds a Web Application Archive (WAR) file from the project output
-                and its dependencies. -->
-            <plugin>
-                <!-- Add Maven coordinates (GAV) for: maven-war-plugin -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.0</version>
-            </plugin>
-        </plugins>
-    </build>
-
-</project>
+    </Appenders>
+    <Loggers>
+        <Logger name="Log_Console" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="Log_File" level="trace" additivity="false">
+            <AppenderRef ref="File1"/>
+        </Logger>
+        <Logger name="Zip_File" level="debug" additivity="true">
+            <AppenderRef ref="FileZip"/>
+        </Logger>
+        <Logger name="Rolling_File" level="debug" additivity="true">
+            <AppenderRef ref="FileRolling"/>
+        </Logger>
+        <Root level="DEBUG">
+            <AppenderRef ref="File1"/>
+            <AppenderRef ref="FileZip"/>
+            <AppenderRef ref="FileRolling"/>
+            <AppenderRef ref="Console" level="trace"/>
+        </Root>
+    </Loggers>
+</Configuration>

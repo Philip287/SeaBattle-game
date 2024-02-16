@@ -1,25 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb0093ba-1173-418b-b314-4127d4ad9703" name="Changes" comment="" />
+    <list default="true" id="cb0093ba-1173-418b-b314-4127d4ad9703" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Display.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/RandomIntelligence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/SeaMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/ColorGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/DataPlayers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/DataPlayers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/ContentGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/ContentGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/SaveResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/SaveResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/CommandExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/PlayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/PlayCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/RegisterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/SingInCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/SingInCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2cRUXaWFL6x4iPHR1inQVVdtGjJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\f_sup\IdeaProjects\SeaBattle-game\src\main\resources\data" />
+      <recent name="C:\Users\f_sup\IdeaProjects\SeaBattle-game\src\main\resources" />
+      <recent name="C:\Users\f_sup\IdeaProjects\SeaBattle-game\src\main\java\com\suprun" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.suprun.seaBattleGame.App" />
+      <module name="SeaBattle-game" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.suprun.seaBattleGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -28,7 +102,71 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708073926799</updated>
+      <workItem from="1708073928284" duration="11386000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/SeaMap.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/SingInCommand.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/PlayCommand.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/InfoCommand.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/PlayCommand.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/CommandExecutor.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/GameService.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/ExitCommand.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

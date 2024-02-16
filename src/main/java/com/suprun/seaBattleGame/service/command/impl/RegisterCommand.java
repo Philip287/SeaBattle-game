@@ -1,11 +1,11 @@
 package com.suprun.seaBattleGame.service.command.impl;
 
-import com.suprun.seaBattleGame.App;
-import com.suprun.seaBattleGame.entity.Player;
+import com.suprun.seaBattleGame.entity.User;
 import com.suprun.seaBattleGame.exception.ServiceException;
 import com.suprun.seaBattleGame.reader.DataReader;
 import com.suprun.seaBattleGame.reader.impl.DataReaderImpl;
 import com.suprun.seaBattleGame.service.ContentGame;
+import com.suprun.seaBattleGame.service.GameService;
 import com.suprun.seaBattleGame.service.MessageHelper;
 import com.suprun.seaBattleGame.service.SaveResult;
 import com.suprun.seaBattleGame.service.command.Command;
@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
-import static com.suprun.seaBattleGame.entity.Player.builder;
+import static com.suprun.seaBattleGame.entity.User.builder;
 
 public class RegisterCommand implements Command {
 
@@ -34,13 +34,13 @@ public class RegisterCommand implements Command {
 
     @Override
     public void execute() throws ServiceException {
-        Player tempPlayer = playerCreateVerification();
-        App.player = tempPlayer;
+        User tempPlayer = playerCreateVerification();
+        GameService.player = tempPlayer;
     }
 
-    private Player playerCreateVerification() throws ServiceException {
+    private User playerCreateVerification() throws ServiceException {
         boolean flag = false;
-        Player tempPlayer = null;
+        User tempPlayer = null;
         while (!flag) {
             MessageHelper.writeMessage(ContentGame.PLAYER_FOR_REGISTR_NAME_MESSAGE);
             String namePlayer = MessageHelper.readString().trim();
@@ -59,13 +59,13 @@ public class RegisterCommand implements Command {
             boolean checkPassword = false;
             String password = null;
             while (!checkPassword) {
-                MessageHelper.writeMessage(ContentGame.PASSWORD_CODE_MESSAGE);
+                MessageHelper.writeMessage(ContentGame.PASSWORD_FOR_REGISTER_CODE_MESSAGE);
                 password = MessageHelper.readString().trim();
                 checkPassword = passwordCheck(password);
             }
-            Map<String, Player> playersList = reader.readFile().getPlayersList();
+            Map<String, User> playersList = reader.readFile().getPlayersList();
             if (namePlayer != null) {
-                Player checkPlayer = playersList.get(namePlayer);
+                User checkPlayer = playersList.get(namePlayer);
                 if (checkPlayer != null) {
                     flag = false;
                     MessageHelper.writeMessage(ContentGame.PLAYER_IS_EXISTS);

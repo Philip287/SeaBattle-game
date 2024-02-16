@@ -4,7 +4,6 @@ public class ContentGame {
     public static final String LINE = "";
     public static final String MESSAGE = "Enter operation type, please: \n 1 - INFO. \n 2 - Sing in." +
             "\n 3 - Registration.\n 4 - Play GAME. \n 5 - EXIT.";
-    public static final String NOT_VALID = "Data are not valid";
     public static final String PATH = "src/main/resources/data/data.txt";
     public static final String PATH_ERR = "File is not exist or is empty or incorrect path";
     public static final String READING_FAIL = "Reading file is fail ";
@@ -16,7 +15,6 @@ public class ContentGame {
     public static final String PLAYER_NAME_MESSAGE = "To log in enter your Name, please:";
     public static final String WRONG_NAME_PLAYER = "WRONG NAME PLAYER";
     public static final String PLAYER_AGE_MESSAGE = "Enter your AGE, please:";
-    public static final String PLAYER_PASSWORD_MESSAGE = "Enter password, please:";
     public static final String PLAYER_IS_EXISTS = "A player by that name already exists. Try again.";
     public static final String MESSAGE_PLAYER_NAME = "Player name - ";
     public static final String MESSAGE_PLAYER_AGE = "Player age - ";
@@ -28,9 +26,14 @@ public class ContentGame {
     public static final String PLAYER_FOR_REGISTR_NAME_MESSAGE = "Let's start registration. Enter your Name, please:";
     public static final String PLAYER_NOT_EXIST_MESSAGE = "A player by that name doesn't exist. Please register.";
     public static final String PLAYER_AGE_ERROR_MESSAGE = "Incorrect data has been entered.";
+    public static final String PASSWORD_ASK_CODE_MESSAGE = "Enter your password, please: ";
+    public static final String MESSAGE_SHIP_UNDER_FIRE = "Our ship is under fire!";
+    public static final String MESSAGE_KEEP_GOING = "Nice shot, keep going!";
+    public static final String MESSAGE_TRY_AGAIN = "The order is unclear, data format error!\nTry again!";
+    public static final String MESSAGE_AWAITING_ORDERS = "Awaiting orders:";
 
     public static String MESSAGE_HEADER = "Your statistics: ";
-    public static final String PASSWORD_CODE_MESSAGE = "Enter password. Password must contain:\n" +
+    public static final String PASSWORD_FOR_REGISTER_CODE_MESSAGE = "Enter password. Password must contain:\n" +
             "- at least 8 characters\n" +
             "- at least 1 number\n" +
             "- at least 1 upper case letter\n" +

@@ -1,14 +1,14 @@
 package com.suprun.seaBattleGame.service;
 
 import com.suprun.seaBattleGame.entity.DataPlayers;
-import com.suprun.seaBattleGame.entity.Player;
+import com.suprun.seaBattleGame.entity.User;
 import com.suprun.seaBattleGame.exception.ServiceException;
 import com.suprun.seaBattleGame.reader.DataReader;
 import com.suprun.seaBattleGame.reader.impl.DataReaderImpl;
 import com.suprun.seaBattleGame.util.JsonParserUtil;
 import com.suprun.seaBattleGame.util.impl.JsonParserUtilImpl;
 
-import static com.suprun.seaBattleGame.entity.Player.builder;
+import static com.suprun.seaBattleGame.entity.User.builder;
 
 /**
  * {@code SaveResult} class is used to save information about User
@@ -24,9 +24,9 @@ public class SaveResult {
         reader = new DataReaderImpl();
     }
 
-    public boolean saveResultOperation(Player playerToSave) throws ServiceException {
+    public boolean saveResultOperation(User playerToSave) throws ServiceException {
         DataPlayers dataPlayers = reader.readFile();
-        Player player = builder()
+        User player = builder()
                 .setName(playerToSave.getName())
                 .setAge(playerToSave.getAge())
                 .setPassword(playerToSave.getPassword())

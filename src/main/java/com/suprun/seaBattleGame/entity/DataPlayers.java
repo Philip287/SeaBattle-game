@@ -9,7 +9,7 @@ import java.util.Map;
  * @author Philip Suprun
  */
 public class DataPlayers {
-    private Map<String, Player> playersList = new HashMap<>();
+    private Map<String, User> playersList = new HashMap<>();
 
     private DataPlayers() {
 
@@ -19,7 +19,7 @@ public class DataPlayers {
         return new DataPlayers().new DataPlayersBuilder();
     }
 
-    public Map<String, Player> getPlayersList() {
+    public Map<String, User> getPlayersList() {
         return playersList;
     }
 
@@ -52,7 +52,7 @@ public class DataPlayers {
 
         }
 
-        public DataPlayersBuilder setPlayerList(Map<String, Player> playerList) {
+        public DataPlayersBuilder setPlayerList(Map<String, User> playerList) {
             DataPlayers.this.playersList = playerList;
             return this;
         }
@@ -68,7 +68,7 @@ public class DataPlayers {
 
     }
 
-    public Player addPlayer(Player player) {
+    public User addPlayer(User player) {
         String name = player.getName();
         return playersList.put(name, player);
     }
