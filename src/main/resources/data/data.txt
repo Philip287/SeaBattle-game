@@ -1,0 +1,1 @@
+{"playersList":{"Admin":{"name":"Admin","age":32,"password":"AlphaRomeo4c","victoriesCount":50,"lesionsCount":0,"isActive":true},"Philip":{"name":"Philip","age":12,"password":"myDream1@$$","victoriesCount":0,"lesionsCount":0,"isActive":true}}}
