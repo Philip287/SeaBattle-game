@@ -28,7 +28,7 @@ public enum Operation {
                 return Operation.REGISTER;
             case 4:
                 return Operation.PLAY;
-            case 5 :
+            case 5:
                 return Operation.EXIT;
             default:
                 LOGGER.info(ContentGame.MESSAGE);

@@ -5,28 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb0093ba-1173-418b-b314-4127d4ad9703" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Display.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/RandomIntelligence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/SeaMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/ColorGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/GameService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/DataPlayers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/DataPlayers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/SeaMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/SeaMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/ContentGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/ContentGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/Operation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/SaveResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/SaveResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/CommandExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/ExitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/InfoCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/PlayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/PlayCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/RegisterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/RegisterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/SingInCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/SingInCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/f_sup/IdeaProjects/taskbyintex/README.md",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -103,6 +94,8 @@
       <option name="presentableId" value="Default" />
       <updated>1708073926799</updated>
       <workItem from="1708073928284" duration="11386000" />
+      <workItem from="1708177140040" duration="4043000" />
+      <workItem from="1708258224263" duration="2910000" />
     </task>
     <servers />
   </component>
@@ -165,6 +158,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/service/command/impl/ExitCommand.java</url>
           <line>27</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/suprun/seaBattleGame/entity/Player.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

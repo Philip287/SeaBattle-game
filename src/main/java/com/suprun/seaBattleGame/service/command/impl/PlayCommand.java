@@ -25,7 +25,7 @@ public class PlayCommand implements Command {
             SeaMap mapOne = new SeaMap();
             SeaMap mapTwo = new SeaMap();
 
-            Player playerOne = new Player("Capitan", mapOne, mapTwo);
+            Player playerOne = new Player(GameService.player.getName(), mapOne, mapTwo);
             RandomIntelligence playerTwo = new RandomIntelligence(mapTwo, mapOne);
 
             Game gameSession = new Game(playerOne, playerTwo);

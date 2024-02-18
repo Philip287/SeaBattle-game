@@ -1,12 +1,11 @@
 package com.suprun.seaBattleGame.entity;
 
+import com.suprun.seaBattleGame.exception.ServiceException;
 import com.suprun.seaBattleGame.service.ContentGame;
-import com.suprun.seaBattleGame.service.GameService;
 import com.suprun.seaBattleGame.service.MessageHelper;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Player {
     final private String name;
@@ -51,21 +50,27 @@ public class Player {
     }};
 
     public Player(String name, SeaMap map, SeaMap radar) {
-        this.name = GameService.player.getName();
+        this.name = name;
         this.map = map;
         this.radar = radar;
     }
 
     public boolean shoot() {
-        Scanner in = new Scanner(System.in);
         MessageHelper.writeMessage(ContentGame.MESSAGE_AWAITING_ORDERS);
-        String command = in.nextLine();
+        String command = null;
+        do {
+            try {
+                command = MessageHelper.readString();
+            } catch (ServiceException e) {
+                MessageHelper.writeMessage(ContentGame.MESSAGE_TRY_AGAIN);
+            }
+        } while (command == null);
 
         if (Arrays.asList(commands).contains(command)) {
-            System.out.println(command.toUpperCase().charAt(0));
+            MessageHelper.writeMessage(String.valueOf(command.toUpperCase().charAt(0)));
 
             int x = commandsMap.get((Character.toString(command.toUpperCase().charAt(0))));
-            int y = Integer.parseInt(Character.toString(command.charAt(1))) - 1;
+            int y = (Integer.parseInt(command.replaceAll("[\\D]", "")) - 1);
 
             if (radar.isFreeEnterCell(x, y)) {
                 return radar.registerShot(x, y);

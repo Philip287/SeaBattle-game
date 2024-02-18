@@ -136,7 +136,7 @@ public class SeaMap implements Cloneable {
                             positionY -= 1;
                         }
 
-                        while (positionY < 9 && (field[positionY][x] != 0 && field[positionY][x] != 4)) {
+                        while (positionY < 15 && (field[positionY][x] != 0 && field[positionY][x] != 4)) {
                             if (field[positionY][x] == 1) {
                                 return true;
                             }
@@ -165,7 +165,7 @@ public class SeaMap implements Cloneable {
                             positionX -= 1;
                         }
 
-                        while (positionX < 9 && (field[y][positionX] != 0 && field[y][positionX] != 4)) {
+                        while (positionX < 15 && (field[y][positionX] != 0 && field[y][positionX] != 4)) {
                             if (field[y][positionX] == 1) {
                                 return true;
                             }
@@ -193,14 +193,14 @@ public class SeaMap implements Cloneable {
                 positionY += 1;
             }
 
-            while (positionY < 9 && (field[positionY][x] != 0 && field[positionY][x] != 4)) {
+            while (positionY < 15 && (field[positionY][x] != 0 && field[positionY][x] != 4)) {
                 field[positionY][x] = 3;
 
                 if (positionY > 0) {
                     if (field[positionY - 1][x] == 0) {
                         field[positionY - 1][x] = 4;
                     }
-                    if (x + 1 <= 9) {
+                    if (x + 1 <= 15) {
                         if (field[positionY - 1][x + 1] == 0) {
                             field[positionY - 1][x + 1] = 4;
                         }
@@ -218,7 +218,7 @@ public class SeaMap implements Cloneable {
                     }
                 }
 
-                if (x < 9) {
+                if (x < 15) {
                     if (field[positionY][x + 1] == 0) {
                         field[positionY][x + 1] = 4;
                     }
@@ -228,7 +228,7 @@ public class SeaMap implements Cloneable {
                     field[positionY + 1][x] = 4;
                 }
 
-                if (x + 1 <= 9) {
+                if (x + 1 <= 15) {
                     if (field[positionY + 1][x + 1] == 0) {
                         field[positionY + 1][x + 1] = 4;
                     }
@@ -252,14 +252,14 @@ public class SeaMap implements Cloneable {
                 positionX += 1;
             }
 
-            while (positionX < 9 && (field[y][positionX] != 0 && field[y][positionX] != 4)) {
+            while (positionX < 15 && (field[y][positionX] != 0 && field[y][positionX] != 4)) {
                 field[y][positionX] = 3;
 
                 if (positionX > 0) {
                     if (field[y][positionX - 1] == 0) {
                         field[y][positionX - 1] = 4;
                     }
-                    if (y + 1 <= 9) {
+                    if (y + 1 <= 15) {
                         if (field[y + 1][positionX - 1] == 0) {
                             field[y + 1][positionX - 1] = 4;
                         }
@@ -277,7 +277,7 @@ public class SeaMap implements Cloneable {
                     }
                 }
 
-                if (y < 9) {
+                if (y < 15) {
                     if (field[y + 1][positionX] == 0) {
                         field[y + 1][positionX] = 4;
                     }
@@ -286,7 +286,7 @@ public class SeaMap implements Cloneable {
                 if (field[y][positionX + 1] == 0) {
                     field[y][positionX + 1] = 4;
                 }
-                if (y + 1 <= 9) {
+                if (y + 1 <= 15) {
                     if (field[y + 1][positionX + 1] == 0) {
                         field[y + 1][positionX + 1] = 4;
                     }
@@ -307,13 +307,13 @@ public class SeaMap implements Cloneable {
         if (x != 0) {
             env[0] = x - 1;
         }
-        if (x != 9) {
+        if (x != 15) {
             env[1] = x + 1;
         }
         if (y != 0) {
             env[2] = y - 1;
         }
-        if (y != 9) {
+        if (y != 15) {
             env[3] = y + 1;
         }
 

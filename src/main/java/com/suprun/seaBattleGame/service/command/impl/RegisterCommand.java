@@ -79,6 +79,7 @@ public class RegisterCommand implements Command {
                         .setLesionsCount(0)
                         .setVictoriesCount(0)
                         .setActive(true)
+                        .serRole(User.UserRole.USER)
                         .build();
 
                 if (saveResult.saveResultOperation(tempPlayer)) {
@@ -92,7 +93,7 @@ public class RegisterCommand implements Command {
         return tempPlayer;
     }
 
-    public boolean passwordCheck(String password) throws ServiceException {
+    public boolean passwordCheck(String password) {
         boolean flag = false;
         if (passwordValidator.validate(password)) {
             flag = true;

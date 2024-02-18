@@ -34,6 +34,7 @@ public class SaveResult {
                 .setVictoriesCount(playerToSave.getVictoriesCount())
                 .setBlockTime(playerToSave.getBlockTime())
                 .setActive(playerToSave.isActive())
+                .serRole(playerToSave.getRole())
                 .build();
         dataPlayers.getPlayersList().put(player.getName(), player);
         String jsonString = jsonParserUtil.parseToJson(dataPlayers);

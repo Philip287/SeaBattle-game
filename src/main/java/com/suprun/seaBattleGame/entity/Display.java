@@ -2,11 +2,11 @@ package com.suprun.seaBattleGame.entity;
 
 
 import com.suprun.seaBattleGame.service.ColorGame;
+import com.suprun.seaBattleGame.service.MessageHelper;
 
 import java.io.IOException;
 import java.util.HashMap;
 
-import static java.lang.System.out;
 
 public class Display {
     private final String columns = "   A B C D E F G H I J K L M N O P\n";
@@ -36,7 +36,7 @@ public class Display {
         } else if (os.contains("nix") || os.contains("nux")) {
             new ProcessBuilder("terminal", "/c", "clear").inheritIO().start().waitFor();
         }
-        out.println();
+        MessageHelper.writeMessage(" ");
     }
 
     public void displayMap(SeaMap map) {
@@ -54,7 +54,7 @@ public class Display {
                     mapSymbols.get(map.getCell(i, 14)), mapSymbols.get(map.getCell(i, 15))));
         }
         mapImage.append("\n");
-        out.print(mapImage);
+        MessageHelper.writeMessage(String.valueOf(mapImage));
     }
 
     public void displayRadar(SeaMap radar) {
@@ -72,6 +72,6 @@ public class Display {
                     radarSymbols.get(radar.getCell(i, 14)), radarSymbols.get(radar.getCell(i, 15))));
         }
         radarImage.append("\n");
-        out.print(radarImage);
+        MessageHelper.writeMessage(String.valueOf(radarImage));
     }
 }

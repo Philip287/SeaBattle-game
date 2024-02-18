@@ -22,7 +22,7 @@ public class ContentGame {
     public static final String MESSAGE_LESIONS_COUNT = "lesions count - ";
     public static final String GOOD_REGISTER_MESSAGE = ", you have been successfully registered";
     public static final String JSON_ADMIN_REGISTER = "{\"playersList\":{\"Admin\":{\"name\":\"Admin\",\"age\":32," +
-            "\"password\":\"AlphaRomeo4c\",\"victoriesCount\":50,\"lesionsCount\":0,\"isActive\":true}}}";
+            "\"password\":\"AlphaRomeo4c\",\"victoriesCount\":50,\"lesionsCount\":0,\"isActive\":true,\"role\":\"ADMIN\"}}}";
     public static final String PLAYER_FOR_REGISTR_NAME_MESSAGE = "Let's start registration. Enter your Name, please:";
     public static final String PLAYER_NOT_EXIST_MESSAGE = "A player by that name doesn't exist. Please register.";
     public static final String PLAYER_AGE_ERROR_MESSAGE = "Incorrect data has been entered.";

@@ -1,7 +1,20 @@
 package com.suprun.seaBattleGame.entity;
 
-
+/**
+ * {@code Eser} class represents a user entity.
+ *
+ * @author Philip Suprun
+ */
 public class User {
+
+    /**
+     * Enum containing user roles assigned by administrator.
+     */
+    public enum UserRole {
+        ADMIN,
+        USER
+    }
+
     private String name;
     private int age;
     private String password;
@@ -9,53 +22,34 @@ public class User {
     private int lesionsCount;
     private Long blockTime;
     private boolean isActive;
+    private UserRole role;
 
     public User() {
 
     }
 
-    public static PlayerBuilder builder() {
-        return new User().new PlayerBuilder();
+    public static UserBuilder builder() {
+        return new User().new UserBuilder();
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public int getVictoriesCount() {
         return victoriesCount;
     }
 
-    public void setVictoriesCount(int victoriesCount) {
-        this.victoriesCount = victoriesCount;
-    }
-
     public int getLesionsCount() {
         return lesionsCount;
-    }
-
-    public void setLesionsCount(int lesionsCount) {
-        this.lesionsCount = lesionsCount;
     }
 
     public Long getBlockTime() {
@@ -74,20 +68,25 @@ public class User {
         isActive = active;
     }
 
+    public UserRole getRole() {
+        return role;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        User player = (User) o;
+        User user = (User) o;
 
-        if (age != player.age) return false;
-        if (victoriesCount != player.victoriesCount) return false;
-        if (lesionsCount != player.lesionsCount) return false;
-        if (isActive != player.isActive) return false;
-        if (name != null ? !name.equals(player.name) : player.name != null) return false;
-        if (password != null ? !password.equals(player.password) : player.password != null) return false;
-        return blockTime != null ? blockTime.equals(player.blockTime) : player.blockTime == null;
+        if (age != user.age) return false;
+        if (victoriesCount != user.victoriesCount) return false;
+        if (lesionsCount != user.lesionsCount) return false;
+        if (isActive != user.isActive) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (password != null ? !password.equals(user.password) : user.password != null) return false;
+        if (blockTime != null ? !blockTime.equals(user.blockTime) : user.blockTime != null) return false;
+        return role == user.role;
     }
 
     @Override
@@ -99,12 +98,13 @@ public class User {
         result = 31 * result + lesionsCount;
         result = 31 * result + (blockTime != null ? blockTime.hashCode() : 0);
         result = 31 * result + (isActive ? 1 : 0);
+        result = 31 * result + (role != null ? role.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Player{");
+        final StringBuffer sb = new StringBuffer("User{");
         sb.append("name='").append(name).append('\'');
         sb.append(", age=").append(age);
         sb.append(", password='").append(password).append('\'');
@@ -112,49 +112,68 @@ public class User {
         sb.append(", lesionsCount=").append(lesionsCount);
         sb.append(", blockTime=").append(blockTime);
         sb.append(", isActive=").append(isActive);
+        sb.append(", role=").append(role);
         sb.append('}');
         return sb.toString();
     }
 
-    public class PlayerBuilder {
-        private PlayerBuilder() {
+    public class UserBuilder {
+        private UserBuilder() {
 
         }
 
-        public PlayerBuilder setName(String name) {
+        public UserBuilder setName(String name) {
             User.this.name = name;
             return this;
         }
 
-        public PlayerBuilder setAge(int age) {
+        public UserBuilder setAge(int age) {
             User.this.age = age;
             return this;
         }
 
-        public PlayerBuilder setPassword(String password) {
+        public UserBuilder setPassword(String password) {
             User.this.password = password;
             return this;
         }
 
-        public PlayerBuilder setVictoriesCount(int victoriesCount) {
+        public UserBuilder setVictoriesCount(int victoriesCount) {
             User.this.victoriesCount = victoriesCount;
             return this;
         }
 
-        public PlayerBuilder setLesionsCount(int lesionsCount) {
+        public UserBuilder setLesionsCount(int lesionsCount) {
             User.this.lesionsCount = lesionsCount;
             return this;
         }
 
-        public PlayerBuilder setBlockTime(Long blockTime) {
+        public UserBuilder setBlockTime(Long blockTime) {
             User.this.blockTime = blockTime;
             return this;
         }
 
-        public PlayerBuilder setActive(boolean isActive) {
+        public UserBuilder setActive(boolean isActive) {
             User.this.isActive = isActive;
             return this;
         }
+
+        public UserBuilder serRole(UserRole role) {
+            User.this.role = role;
+            return this;
+        }
+
+        public UserBuilder of(User user) {
+            User.this.name = user.name;
+            User.this.age = user.age;
+            User.this.password = user.password;
+            User.this.victoriesCount = user.victoriesCount;
+            User.this.lesionsCount = user.lesionsCount;
+            User.this.blockTime = user.blockTime;
+            User.this.isActive = user.isActive;
+            User.this.role = user.role;
+            return this;
+        }
+
         public User build() {
             return User.this;
         }

@@ -22,7 +22,7 @@ public class Game {
             display.displayMap(playerOne.getMap());
             display.displayRadar(playerOne.getRadar());
             if (playerOne.shoot()) {
-            MessageHelper.writeMessage(ContentGame.MESSAGE_KEEP_GOING);
+                MessageHelper.writeMessage(ContentGame.MESSAGE_KEEP_GOING);
                 continue;
             }
 
