@@ -33,7 +33,7 @@ public class SaveResult {
                 .setLesionsCount(playerToSave.getLesionsCount())
                 .setVictoriesCount(playerToSave.getVictoriesCount())
                 .setBlockTime(playerToSave.getBlockTime())
-                .setActive(playerToSave.isActive())
+                .setActive(playerToSave.getIsActive())
                 .serRole(playerToSave.getRole())
                 .build();
         dataPlayers.getPlayersList().put(player.getName(), player);

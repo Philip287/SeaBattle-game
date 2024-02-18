@@ -24,7 +24,6 @@ import java.util.concurrent.TimeUnit;
  * @author Philip Suprun
  */
 public class SingInCommand implements Command {
-    private final Long DAY_IN_MILLISECONDS = 86400000L;
     private SaveResult saveResult;
     private Validator passwordValidator;
     private DataReader reader;
@@ -81,7 +80,7 @@ public class SingInCommand implements Command {
             MessageHelper.writeMessage(ContentGame.PASSWORD_ASK_CODE_MESSAGE);
             String password = MessageHelper.readString().trim();
             if (passwordValidator.validate(password)) {
-                if (tempPlayer.isActive()) {
+                if (tempPlayer.getIsActive()) {
                     if (tempPlayer.getPassword().equals(password)) {
                         flag = true;
                     } else {
@@ -114,7 +113,7 @@ public class SingInCommand implements Command {
     }
 
     private boolean blockingCheck(User tempPlayer) throws ServiceException {
-        if (!tempPlayer.isActive()) {
+        if (!tempPlayer.getIsActive()) {
             return playerUnblock(tempPlayer);
         } else {
             return false;
@@ -124,14 +123,14 @@ public class SingInCommand implements Command {
     private boolean playerUnblock(User tempPlayer) throws ServiceException {
         Calendar calendar = new GregorianCalendar();
         Long now = calendar.getTimeInMillis();
-        if (now >= (tempPlayer.getBlockTime() + DAY_IN_MILLISECONDS)) {
+        if (now >= (tempPlayer.getBlockTime() + ContentGame.DAY_IN_MILLISECONDS)) {
             tempPlayer.setActive(true);
             tempPlayer.setBlockTime(null);
             saveResult.saveResultOperation(tempPlayer);
             MessageHelper.writeMessage(ContentGame.UNBLOCK_PLAYER_MESSAGE);
             return false;
         } else {
-            Long remainingTimeToUnlocking = (tempPlayer.getBlockTime() + DAY_IN_MILLISECONDS) - now;
+            Long remainingTimeToUnlocking = (tempPlayer.getBlockTime() + ContentGame.DAY_IN_MILLISECONDS) - now;
             MessageHelper.writeMessage(ContentGame.INFO_BLOCK_PLAYER_MESSAGE +
                     TimeUnit.MILLISECONDS.toMinutes(remainingTimeToUnlocking) / 60 + ContentGame.HOURS_MESSAGE);
             GameService.player = null;

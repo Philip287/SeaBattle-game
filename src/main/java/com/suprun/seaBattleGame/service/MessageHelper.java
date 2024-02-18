@@ -48,4 +48,20 @@ public class MessageHelper {
         }
         return askOperation();
     }
+
+    public static Operation askOperationForAdmin() {
+        boolean exit = false;
+        while (!exit) {
+            try {
+                writeMessage(ContentGame.MESSAGE_FOR_ADMIN);
+                int operationType = Integer.parseInt(readString());
+                exit = true;
+                return Operation.getAllowableOperationByOrdinal(operationType);
+            } catch (NumberFormatException | ServiceException e) {
+                LOGGER.error("Exception in MessageHelper.askOperation() method find ", e);
+                MessageHelper.writeMessage(ContentGame.UNKNOWN_OPERATION_MESSAGE);
+            }
+        }
+        return askOperation();
+    }
 }

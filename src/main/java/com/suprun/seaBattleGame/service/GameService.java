@@ -12,10 +12,18 @@ public class GameService {
     public static User player;
 
     public static void startGame() {
+
         try {
+            Operation operation = MessageHelper.askOperation();
             do {
-                Operation operation = MessageHelper.askOperation();
                 CommandExecutor.execution(operation);
+                if (player != null) {
+                    if (player.getRole() == User.UserRole.ADMIN) {
+                        operation = MessageHelper.askOperationForAdmin();
+                    } else {
+                        operation = MessageHelper.askOperation();
+                    }
+                }
             } while (!exit);
         } catch (ServiceException e) {
             player = null;

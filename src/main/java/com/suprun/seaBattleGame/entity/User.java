@@ -60,7 +60,7 @@ public class User {
         this.blockTime = blockTime;
     }
 
-    public boolean isActive() {
+    public boolean getIsActive() {
         return isActive;
     }
 

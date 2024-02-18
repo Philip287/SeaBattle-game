@@ -31,7 +31,23 @@ public class ContentGame {
     public static final String MESSAGE_KEEP_GOING = "Nice shot, keep going!";
     public static final String MESSAGE_TRY_AGAIN = "The order is unclear, data format error!\nTry again!";
     public static final String MESSAGE_AWAITING_ORDERS = "Awaiting orders:";
-
+    public static final String MESSAGE_FOR_ADMIN = "Enter operation type, please: \n 1 - INFO. \n 2 - Sing in." +
+            "\n 3 - Registration.\n 4 - Play GAME. \n 5 - EXIT. \n 6 - Info about users. \n 7 - Change profile some user.";
+    public static final String PLAYER_MESSAGE = "play";
+    public static final String MESSAGE_BLOCK_TIME = "account has been blocked for: ";
+    public static final String MESSAGE_IS_ACTIVE = "Account is active: ";
+    public static final String MESSAGE_ROLE = "User role is: ";
+    public static final String MESSAGE_CHOOSE_USER_FOR_CHANGE = "Please enter name user to change their profile";
+    public static final String MESSAGE_INFORMATION = "---------------------------------";
+    public static final String MESSAGE_CHANGE_ROLE = "Enter: \n -1. To assign the administrator role. " +
+            "\n -2. assign the user role.";
+    public static final String MESSAGE_CHANGE_ACTIVE = "Enter: \n -1. To block user. " +
+            "\n -2. to unblock user.";
+    public static final String MESSAGE_CHANGE_LESION_COUNT = "Enter new count of lesion: ";
+    public static final String MESSAGE_CHANGE_VICTORIES_COUNT = "Enter new count of victories: ";
+    public static final String INFO_UNBLOCK_PLAYER_MESSAGE = "There is time left to unlock the account: ";
+    public static final String INFO_NOT_BLOCK_PLAYER_MESSAGE = "This account is active.";
+    public static final Long DAY_IN_MILLISECONDS = 86400000L;
     public static String MESSAGE_HEADER = "Your statistics: ";
     public static final String PASSWORD_FOR_REGISTER_CODE_MESSAGE = "Enter password. Password must contain:\n" +
             "- at least 8 characters\n" +
@@ -44,7 +60,7 @@ public class ContentGame {
     public static final String WRONG_PASSWORD_MESSAGE = "The password entered is incorrect.";
     public static final String BLOCK_PLAYER_MESSAGE = "Your account has been blocked for 24 hours.";
     public static final String INFO_BLOCK_PLAYER_MESSAGE = "Your account has been blocked for 24 hours. " +
-            "There is time left to unlock the card: ";
+            "There is time left to unlock the account: ";
     public static final String UNBLOCK_PLAYER_MESSAGE = "Your account has been unblocked.";
     public static final String UNKNOWN_OPERATION_MESSAGE = "Unknown operation, try again";
     public static final String HOURS_MESSAGE = " hours";

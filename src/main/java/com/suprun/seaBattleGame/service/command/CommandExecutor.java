@@ -21,7 +21,8 @@ public class CommandExecutor {
         commandMap.put(Operation.EXIT, new ExitCommand());
         commandMap.put(Operation.REGISTER, new RegisterCommand());
         commandMap.put(Operation.PLAY, new PlayCommand());
-
+        commandMap.put(Operation.CHANGE_USER_PROFILE, new ChangeProfileUserCommand());
+        commandMap.put(Operation.INFO_ABOUT_USERS, new InfoUsersCommand());
     }
 
     private CommandExecutor() {

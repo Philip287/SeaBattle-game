@@ -1,1 +1,1 @@
-{"playersList":{"Admin":{"name":"Admin","age":32,"password":"AlphaRomeo4c","victoriesCount":50,"lesionsCount":0,"isActive":true,"role":"ADMIN"}}}
+{"playersList":{"Admin":{"name":"Admin","age":32,"password":"AlphaRomeo4c","victoriesCount":50,"lesionsCount":0,"blockTime":0,"isActive":true,"role":"ADMIN"},"Philip":{"name":"Philip","age":32,"password":"myDream1@$$","victoriesCount":3,"lesionsCount":0,"blockTime":0,"isActive":true,"role":"USER"}}}

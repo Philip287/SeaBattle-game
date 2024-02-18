@@ -1,5 +1,7 @@
 package com.suprun.seaBattleGame.service.command.impl;
 
+import com.suprun.seaBattleGame.entity.Player;
+import com.suprun.seaBattleGame.entity.User;
 import com.suprun.seaBattleGame.exception.ServiceException;
 import com.suprun.seaBattleGame.service.ContentGame;
 import com.suprun.seaBattleGame.service.GameService;
@@ -23,11 +25,16 @@ public class InfoCommand implements Command {
         if (GameService.player == null) {
             singInCommand.execute();
         } else {
-            MessageHelper.writeMessage(ContentGame.MESSAGE_HEADER);
-            MessageHelper.writeMessage(ContentGame.MESSAGE_PLAYER_NAME + GameService.player.getName());
-            MessageHelper.writeMessage(ContentGame.MESSAGE_PLAYER_AGE + GameService.player.getAge());
-            MessageHelper.writeMessage(ContentGame.MESSAGE_VICTORIES_COUNT + GameService.player.getVictoriesCount());
-            MessageHelper.writeMessage(ContentGame.MESSAGE_LESIONS_COUNT + GameService.player.getLesionsCount());
+            printUserInformation(GameService.player);
         }
+    }
+
+    public void printUserInformation(User user) {
+        MessageHelper.writeMessage(ContentGame.MESSAGE_HEADER);
+        MessageHelper.writeMessage(ContentGame.MESSAGE_PLAYER_NAME + user.getName());
+        MessageHelper.writeMessage(ContentGame.MESSAGE_PLAYER_AGE + user.getAge());
+        MessageHelper.writeMessage(ContentGame.MESSAGE_VICTORIES_COUNT + user.getVictoriesCount());
+        MessageHelper.writeMessage(ContentGame.MESSAGE_LESIONS_COUNT + user.getLesionsCount());
+        MessageHelper.writeMessage("\n");
     }
 }

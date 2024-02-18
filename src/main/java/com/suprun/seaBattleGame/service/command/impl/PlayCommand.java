@@ -4,8 +4,10 @@ import com.suprun.seaBattleGame.entity.Player;
 import com.suprun.seaBattleGame.entity.RandomIntelligence;
 import com.suprun.seaBattleGame.entity.SeaMap;
 import com.suprun.seaBattleGame.exception.ServiceException;
+import com.suprun.seaBattleGame.service.ContentGame;
 import com.suprun.seaBattleGame.service.Game;
 import com.suprun.seaBattleGame.service.GameService;
+import com.suprun.seaBattleGame.service.MessageHelper;
 import com.suprun.seaBattleGame.service.command.Command;
 
 import java.io.IOException;
@@ -36,7 +38,7 @@ public class PlayCommand implements Command {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("play");
+            MessageHelper.writeMessage(ContentGame.PLAYER_MESSAGE);
         }
     }
 }
